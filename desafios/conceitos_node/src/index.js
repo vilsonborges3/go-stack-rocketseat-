@@ -1,8 +1,11 @@
 const express = require('express');
+const cors = require('cors');
+
 const { uuid, isUuid } = require('uuidv4');
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 const repositories = [];
 
@@ -62,7 +65,7 @@ app.put('/repositories/:id', (request, response) => {
   return response.json(repository);
 });
 
-app.post('/repositories/:id', (request, response) => {
+app.delete('/repositories/:id', (request, response) => {
   const { id } = request.params;
 
   const repositoryIndex = repositories.findIndex(repository => repository.id === id);
