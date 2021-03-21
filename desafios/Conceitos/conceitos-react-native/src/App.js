@@ -16,13 +16,13 @@ export default function App() {
 
   useEffect(() => {
     api.get('repositories').then(response => {
-      
+      console.log(response.data);
       setRepositories(response.data);
     })
   }, []);
 
   async function handleLikeRepository(id ) {
-    console.log(id);
+    
     await api.post(`repositories/${id}/likes`).then(() => {
       api.get('repositories').then(response => {
         setRepositories(response.data);
