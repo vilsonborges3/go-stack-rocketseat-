@@ -12,6 +12,10 @@ class AppointmentsRepository extends Repository<Appointment> {
       where: { date },
     });
     return findAppointment || null;
+    /**
+     * Toda async await retorna uma Promise e dentro da promisse falamos
+     * qual o retorno da promise
+     */
   }
 }
 
