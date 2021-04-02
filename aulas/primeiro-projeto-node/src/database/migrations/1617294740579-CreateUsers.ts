@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 export default class CreateUsers1617294740579 implements MigrationInterface {
@@ -8,7 +9,7 @@ export default class CreateUsers1617294740579 implements MigrationInterface {
         columns: [
           {
             name: 'id',
-            type: 'varchar',
+            type: 'uuid',
             isPrimary: true,
             generationStrategy: 'uuid',
             default: 'uuid_generate_v4()',
